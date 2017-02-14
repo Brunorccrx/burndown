@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Burndown</string>
+    <string name="tempo_ET">Tempo</string>
+    <string name="atividadeET">Atividade</string>
+    <string name="enviarB">Enviar</string>
+    <string name="atividadesTV">Atividades</string>
+    <string name="tempoTV">Tempo</string>
+    <string name="nomeTV">Nome</string>
+    <string name="salvar_e_mostrar_graficoB">Salvar e mostrar Gráfico</string>
+    <array name="atividades">
+        <item>valor 1</item>
+        <item>valor 2</item>
+        <item>valor 3</item>
+        <item>valor 4</item>
+    </array>
+    
+    </resources>
