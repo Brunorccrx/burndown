@@ -1,6 +1,7 @@
 package software.de.engenharia.com.burndown;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +27,7 @@ public class InserirDadosActivity extends AppCompatActivity {
 
   List<Entry> entradas;
   List<String> nomes;
-  public static List<ILineDataSet> retas;
+  public static List<ILineDataSet> retas = new ArrayList<>();
   float atividade;
   float tempo;
   String nome;
@@ -38,7 +39,6 @@ public class InserirDadosActivity extends AppCompatActivity {
     EditText atividadeET = (EditText) findViewById(R.id.atividadeET);
     EditText tempoET = (EditText) findViewById(R.id.tempoET);
     nomes = new ArrayList<>();
-    retas = new ArrayList<>();
     nome = nomeET.getText().toString();
     atividade = Float.parseFloat(atividadeET.getText().toString());
     tempo = Float.parseFloat(tempoET.getText().toString());
@@ -51,13 +51,15 @@ public class InserirDadosActivity extends AppCompatActivity {
       entradas = new ArrayList<>();
       entradas.add(entrada);
       reta = new LineDataSet(entradas, nome);
+
+//      ((LineDataSet) reta).setColor(Color.RED);
       nomes.add(nome);
+      retas.add(reta);
     }
     else
       reta.addEntry(entrada);
 
 
-    retas.add(reta);
 
   }
 
@@ -70,7 +72,7 @@ public class InserirDadosActivity extends AppCompatActivity {
   }
 
   public void enviarDataSets(View view) {
-    retas.get(0);
+//    retas.get(0);
     Intent intent = getIntent();
     String tempo2 = intent.getStringExtra(TEMPOSTRING2);
     String atividade2 = intent.getStringExtra(ATIVIDADESTRING2);
